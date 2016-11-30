@@ -13,6 +13,11 @@ domain names and subpaths.
 
 Format of mapping file:
 
-	hostname1/path: /local/filesystem/path1
+	hostname1/path/: /local/filesystem/path1
 	hostname2: /local/filesystem/path2
-	/path: /local/filesystem/path3
+	/path/: /local/filesystem/path3
+
+Note how path has trailing slash — if it's omitted, directory would only be
+available under exact `/path`, but not `/path/`. If mapping is configured with
+`/path/`, then both `/path` and `/path/` would work, with former doing redirect
+to latter.
